@@ -6,13 +6,21 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		EA2261702FD762B100DC8F1E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA22616F2FD762B100DC8F1E /* WebKit.framework */; };
-/* End PBXBuildFile section */
+/* Begin PBXCopyFilesBuildPhase section */
+		EA2261762FD7891D00DC8F1E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE8F8C5F2FD72F2000C9AE52 /* Assignmment1App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignmment1App.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA22616F2FD762B100DC8F1E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -41,7 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2261702FD762B100DC8F1E /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				CE8F8C612FD72F2000C9AE52 /* Assignmment1App */,
-				EA22616E2FD762B100DC8F1E /* Frameworks */,
 				CE8F8C602FD72F2000C9AE52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,14 +71,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EA22616E2FD762B100DC8F1E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EA22616F2FD762B100DC8F1E /* WebKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +81,7 @@
 				CE8F8C5B2FD72F2000C9AE52 /* Sources */,
 				CE8F8C5C2FD72F2000C9AE52 /* Frameworks */,
 				CE8F8C5D2FD72F2000C9AE52 /* Resources */,
+				EA2261762FD7891D00DC8F1E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +166,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -198,6 +198,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

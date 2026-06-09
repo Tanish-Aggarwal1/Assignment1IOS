@@ -10,37 +10,44 @@ import WebKit
 
 class WebViewController: UIViewController, WKNavigationDelegate {
 
-    @IBOutlet weak var myWebView: WKWebView!
-    @IBOutlet weak var activity: UIActivityIndicatorView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Check device type (Week 4, Slide 13-14)
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            myWebView.isHidden = true
-        } else {
-            // Load on iPad
+    var myWebView: WKWebView!
+        @IBOutlet weak var activity: UIActivityIndicatorView!
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+
+            myWebView = WKWebView(frame: view.bounds)
+            myWebView.navigationDelegate = self
+            myWebView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.addSubview(myWebView)
+            view.sendSubviewToBack(myWebView)
+
             if let url = URL(string: "https://www.apple.com") {
                 myWebView.load(URLRequest(url: url))
             }
         }
-    }
-    
-    // Show spinner when loading starts (Week 4, Slide 33)
+
         func webView(_ webView: WKWebView,
                      didStartProvisionalNavigation navigation: WKNavigation!) {
             activity.isHidden = false
             activity.startAnimating()
         }
 
-        // Hide spinner when loading finishes (Week 4, Slide 34)
         func webView(_ webView: WKWebView,
                      didFinish navigation: WKNavigation!) {
             activity.isHidden = true
             activity.stopAnimating()
         }
-    
 
+        func webView(_ webView: WKWebView,
+                     didFailProvisionalNavigation navigation: WKNavigation!,
+                     withError error: Error) {
+            activity.isHidden = true
+            activity.stopAnimating()
+            print("Error: \(error.localizedDescription)")
+        }
+    
+    
     /*
     // MARK: - Navigation
 

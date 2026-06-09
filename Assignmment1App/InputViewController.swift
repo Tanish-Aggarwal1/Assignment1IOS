@@ -7,24 +7,27 @@
 
 import UIKit
 
-class InputViewController: UIViewController {
+class InputViewController: UIViewController, UITextFieldDelegate {
 
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var deviceTextField: UITextField!
+    @IBOutlet weak var versionTextField: UITextField!
+    @IBOutlet weak var deviceLabel: UILabel!
+    @IBOutlet weak var versionLabel: UILabel!
+    @IBOutlet weak var outputLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        deviceTextField.delegate = self
+            versionTextField.delegate = self
+        outputLabel.text = ""
         // Do any additional setup after loading the view.
     }
     
     @IBAction func submitPressed(_ sender: Any) {
         // Show alert first, then update labels
         
-        if nameTextField.text == "" || emailTextField.text == "" {
+        if deviceTextField.text == "" || versionTextField.text == "" {
                
                // 2. SHOW error alert
                let alert = UIAlertController(
@@ -44,8 +47,7 @@ class InputViewController: UIViewController {
                     preferredStyle: .alert
                 )
                 alert.addAction(UIAlertAction(title: "Yes", style: .default) { _ in
-                    self.nameLabel.text = self.nameTextField.text
-                    self.emailLabel.text = self.emailTextField.text
+                    self.outputLabel.text = "Device: \(self.deviceTextField.text!) | Version: \(self.versionTextField.text!)"
                 })
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
                 present(alert, animated: true)
